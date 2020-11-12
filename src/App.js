@@ -1,13 +1,15 @@
-import './App.css';
 import React from "react";
+import "./App.css";
+import Header from "./components/Header/Header";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-      </header>
+    <div className="root root_background">
+      <Header modifier={'white'}/>
+      <main>
+      </main>
     </div>
   );
-}
+};
 
 export default App;
