@@ -1,0 +1,238 @@
+.article {
+  position: relative;
+  height: 576px;
+  width: 400px;
+  background-color: #fff;
+  border-radius: 16px;
+}
+
+.article__icon-container {
+  position: absolute;
+  z-index: 1;
+  top: 24px;
+  right: 24px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.article__icon_save {
+  stroke: #b6bcbf;
+  fill: none;
+}
+
+.article__icon_save_active {
+  stroke: black;
+}
+
+.article__icon-container:active > .article__icon_save_active {
+  stroke: none;
+  fill: #2f71e5;
+}
+
+.article__icon_delete {
+  stroke: none;
+  fill: #b6bcbf;
+}
+
+.article__icon-container:hover > .article__icon_delete {
+  stroke: none;
+  fill: black;
+}
+
+.article__icon-container:hover ~ .article__tooltip {
+  display: flex;
+}
+
+.article__tooltip {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  top: 24px;
+  right: 69px;
+  height: 40px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  margin: 0;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 10px 22px rgba(59, 74, 116, 0.1);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+.article__category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  top: 24px;
+  left: 24px;
+  height: 40px;
+  padding: 0 12px;
+  margin: 0;
+  background-color: #ffffff;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+}
+
+.article__image {
+  height: 272px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+}
+
+.article__info {
+  display: flex;
+  flex-direction: column;
+  height: 304px;
+  width: 100%;
+  padding: 20px 24px 24px 24px;
+  box-sizing: border-box;
+}
+
+.article__date {
+  flex: 0 0 auto;
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: #b6bcbf;
+}
+
+.article__title {
+  flex: 0 0 auto;
+  margin: 12px 0 0 0;
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 1.625rem;
+  font-weight: 400;
+  line-height: 1.875rem;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.article__description {
+  max-height: 115px;
+  flex: 1 1 auto;
+  margin: 16px 0 0 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.375rem;
+  -webkit-line-clamp: 5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.article__source {
+  flex: 0 0 auto;
+  margin: 18px auto 0 0;
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
+  color: #b6bcbf;
+  outline: none;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .article {
+    height: 420px;
+    width: 224px;
+  }
+
+  .article__icon-container {
+    top: 8px;
+    right: 8px;
+  }
+
+  .article__icon-container:hover ~ .article__tooltip {
+    display: none;
+  }
+
+  .article__category {
+    top: 8px;
+    left: 8px;
+  }
+
+  .article__image {
+    height: 150px;
+  }
+
+  .article__info {
+    height: 270px;
+    padding: 16px;
+  }
+
+  .article__title {
+    font-size: 1.375rem;
+    line-height: 1.5rem;
+    -webkit-line-clamp: 3;
+  }
+
+  .article__description {
+    margin: 10px 0 0 0;
+    -webkit-line-clamp: 4;
+  }
+
+  .article__source {
+    margin: 12px 0 0 0;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .article {
+    height: 440px;
+    width: 288px;
+  }
+
+  .article__icon-container {
+    top: 16px;
+    right: 16px;
+  }
+
+  .article__category {
+    top: 16px;
+    left: 16px;
+  }
+
+  .article__image {
+    height: 196px;
+  }
+
+  .article__info {
+    height: 244px;
+  }
+
+  .article__title {
+    margin: 10px 0 0 0;
+    font-size: 1.375rem;
+    line-height: 1.625rem;
+    -webkit-line-clamp: 2;
+  }
+
+  .article__source {
+    margin: 8px 0 0 0;
+  }
+}
