@@ -1,0 +1,31 @@
+.search__title {
+  margin: 0;
+  width: 100%;
+  color: white;
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: 400;
+  font-size: 3.75rem;
+  line-height: 4rem;
+}
+
+.search__subtitle {
+  margin: 32px 0 0 0;
+  width: 100%;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .search__title {
+    width: 80%;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .search__subtitle {
+    margin: 16px 0 0 0;
+  }
+}
