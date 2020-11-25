@@ -1,0 +1,107 @@
+.about-author {
+  display: flex;
+  align-items: center;
+  padding: 80px 7.2%;
+}
+
+.about-author__avatar {
+  height: 464px;
+  width: 464px;
+}
+
+.about-author__info {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 51px 0 auto 56px;
+}
+
+.about-author__title {
+  margin: 0;
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 2.875rem;
+}
+
+.about-author__description {
+  margin: 24px 0 0 0;
+}
+
+.about-author__description-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+.about-author__description-text:not:first-child {
+  margin: 24px 0 0 0;
+}
+
+@media screen and (max-width: 1280px) {
+  .about-author {
+    padding: 65px 6.4%;
+  }
+
+  .about-author__avatar {
+    height: 400px;
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .about-author {
+    padding: 50px 5.7%;
+  }
+
+  .about-author__avatar {
+    height: 300px;
+    width: 300px;
+  }
+
+  .about-author__title {
+    font-size: 1.875rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-author {
+    padding: 40px 5.2%;
+  }
+
+  .about-author__avatar {
+    height: 232px;
+    width: 232px;
+  }
+
+  .about-author__info {
+    margin: 0 0 auto 32px;
+  }
+
+  .about-author__title {
+    font-size: 1.875rem;
+    line-height: 2.5rem;
+  }
+
+  .about-author__description {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .about-author {
+    flex-direction: column;
+    padding: 32px 5% 66px 5%;
+  }
+
+  .about-author__avatar {
+    height: 272px;
+    width: 272px;
+  }
+
+  .about-author__info {
+    margin: 24px 0 0 0;
+  }
+}
