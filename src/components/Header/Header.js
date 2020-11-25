@@ -30,16 +30,14 @@ const Header = (props) => {
   };
 
   return (
-    <header
-      className={cn('header', modifier === 'white' ? 'header_white' : null)}
-    >
+    <header className={cn('header', { header_white: modifier === 'white' })}>
       <TextLogo modifier={modifier} />
       <NavbarButton modifier={modifier} onClick={toggleNavWrapper} />
       <div
         className={cn(
           'header__nav-wrapper',
-          isActiveNavWrapper ? 'header__nav-wrapper_enabled' : null,
-          modifier === 'white' ? 'header__nav-wrapper_white' : null
+          { 'header__nav-wrapper_enabled': isActiveNavWrapper },
+          { 'header__nav-wrapper_white': modifier === 'white' }
         )}
       >
         <Nav modifier={modifier} onClick={resetNavWrapper} />
