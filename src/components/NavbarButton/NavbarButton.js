@@ -2,12 +2,9 @@ import React from 'react';
 import cn from 'classnames';
 import './NavbarButton.css';
 
-const Navbar = (props) => {
-  const { modifier } = props;
+const NavbarButton = (props) => {
+  const { modifier, onClick } = props;
 
-  const onClick = () => {
-    console.log(1);
-  }
   return (
     <button className="nav-btn" onClick={onClick}>
       <span
@@ -24,4 +21,4 @@ const Navbar = (props) => {
   );
 };
 
-export default Navbar;
+export default NavbarButton;
