@@ -22,7 +22,7 @@ const Popup = (props) => {
 
   return ReactDOM.createPortal(
     <div className="popup" onClick={popupClick}>
-      <div className="popup__content">
+      <div className="popup__content popup__content_transition">
         <button
           className="popup__button-close"
           type="button"
@@ -31,12 +31,6 @@ const Popup = (props) => {
           <Icon className="popup__icon-close" />
         </button>
         {children}
-        {/*<FormSignIn />*/}
-        {/*<FormSignUp />*/}
-        {/*<Notification*/}
-        {/*  text="Пользователь успешо зарегистирован"*/}
-        {/*  buttonText="Войти"*/}
-        {/*/>*/}
       </div>
     </div>,
     document.getElementById('root-popup')
