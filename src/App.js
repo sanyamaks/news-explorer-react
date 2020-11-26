@@ -1,38 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import cn from 'classnames';
+import { Switch, Route, useLocation } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
-import SearchBlock from './components/SearchBlock/SearchBlock';
-import Loader from './components/Loader/Loader';
-import AboutAuthor from './components/AboutAuthor/AboutAuthor';
+import MainPage from './components/MainPage/MainPage';
+import SavedArticlesPage from './components/SavedArticlesPage/SavedArticlesPage';
 import Footer from './components/Footer/Footer';
-import Results from './components/Results/Results';
-import InfoSavedArticles from './components/InfoSavedArticles/InfoSavedArticles';
-import SavedArticles from './components/SavedArticles/SavedArticles';
-import NotFound from './components/NotFound/NotFound';
 import Popup from './components/Popup/Popup';
 import Notification from './components/Notification/Notification';
 import FormSignUp from './components/Form/FormSignUp/FormSignUp';
 import FormSignIn from './components/Form/FormSignIn/FormSignIn';
-import fakeData from './assets/temp/fakeData'
+import fakeData from './assets/temp/fakeData';
 
 const App = () => {
-  const [fakeState, setFakeState] = useState({
-    isLoaderActive: true,
-    isResultsActive: false,
-  });
-
-  useEffect(() => {
-    setTimeout(() => {
-      setFakeState({
-        isLoaderActive: false,
-        isResultsActive: true,
-      });
-    }, 0);
-  }, []);
-
+  const [isMainPage, setIsMainPage] = useState(true);
   const [isActivePopup, setIsActivePopup] = useState(false);
   const [popupContent, setPopupContent] = useState(null);
+  const location = useLocation();
+
+  // fakeLoader
+  useEffect(() => {
+    console.log(location.pathname);
+    if (location.pathname === '/') {
+      setIsMainPage(true);
+    }
+    if (location.pathname === '/saved-articles') {
+      setIsMainPage(false);
+    }
+  }, [location.pathname]);
 
   const openFormSignUp = () => {
     console.log('OpenSignUp');
@@ -62,38 +57,18 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <div className={cn('app', { app_background: isMainPage })}>
+      <Header
+        modifier={isMainPage ? 'white' : null}
+        handleClick={openFormSignUp}
+      />
       <Switch>
-        <Route
-          path="/saved-articles"
-          render={() => (
-            <div className="root">
-              <Header />
-              <main>
-                <InfoSavedArticles />
-                <SavedArticles isActive={true} articles={fakeData} />
-              </main>
-            </div>
-          )}
-        />
-        <Route
-          path="/"
-          render={() => (
-            <div className="root root_background">
-              <Header modifier="white" handleClick={openFormSignUp} />
-              <main>
-                <SearchBlock />
-                <Loader isActive={fakeState.isLoaderActive} />
-                <Results
-                  isActive={fakeState.isResultsActive}
-                  articles={fakeData}
-                />
-                <NotFound isActive={true} />
-                <AboutAuthor />
-              </main>
-            </div>
-          )}
-        />
+        <Route path="/saved-articles">
+          <SavedArticlesPage />
+        </Route>
+        <Route path="/">
+          <MainPage />
+        </Route>
       </Switch>
       <Footer />
       <Popup
@@ -107,6 +82,3 @@ const App = () => {
 };
 
 export default App;
-//https://dev.to/alexandprivate/your-next-react-modal-with-your-own-usemodal-hook-context-api-3jg7
-//https://codesandbox.io/s/eloquent-hamilton-vgbyq?file=/src/modalContext.js
-// https://levelup.gitconnected.com/build-a-modal-using-react-context-portals-and-hooks-bd0c4e54537e
