@@ -9,13 +9,6 @@ const SearchForm = () => {
     console.log('Отправить данные');
   };
 
-  const [buttonState, setButtonState] = useState({
-    className: 'search__button',
-    text: 'Искать',
-    variant: 'blue',
-    onClick: handleClick,
-  });
-
   return (
     <form className="search__form" onSubmit={handleClick} noValidate>
       <SearchInput
@@ -26,7 +19,12 @@ const SearchForm = () => {
         required={true}
       />
       <SearchPrompt isActive={true} />
-      <Button {...buttonState} />
+      <Button
+        className="search__button"
+        text="Искать"
+        variant="blue"
+        onClick={handleClick}
+      />
     </form>
   );
 };
