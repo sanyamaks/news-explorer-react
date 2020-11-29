@@ -6,8 +6,6 @@ import NavbarButton from '../NavbarButton/NavbarButton';
 import Nav from '../Nav/Nav';
 import Button from '../Button/Button.js';
 import { ReactComponent as Icon } from '../../assets/icons/Union_black.svg';
-import Notification from '../Notification/Notification';
-import FormSignUp from '../Form/FormSignUp/FormSignUp';
 
 const Header = (props) => {
   const { modifier, handleClick } = props;

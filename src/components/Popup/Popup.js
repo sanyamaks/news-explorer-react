@@ -2,9 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './Popup.css';
 import { ReactComponent as Icon } from '../../assets/icons/icon-close-popup.svg';
-import FormSignIn from '../Form/FormSignIn/FormSignIn';
-import FormSignUp from '../Form/FormSignUp/FormSignUp';
-import Notification from '../Notification/Notification';
 
 const Popup = (props) => {
   console.log('Popup');

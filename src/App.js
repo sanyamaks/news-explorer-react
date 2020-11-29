@@ -10,7 +10,6 @@ import Popup from './components/Popup/Popup';
 import Notification from './components/Notification/Notification';
 import FormSignUp from './components/Form/FormSignUp/FormSignUp';
 import FormSignIn from './components/Form/FormSignIn/FormSignIn';
-import fakeData from './assets/temp/fakeData';
 
 const App = () => {
   const [isMainPage, setIsMainPage] = useState(true);

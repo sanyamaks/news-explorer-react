@@ -1,8 +1,7 @@
 import React from 'react';
 import './InfoSavedArticles.css';
 
-const InfoSavedArticles = (props) => {
-  const { className } = props;
+const InfoSavedArticles = () => {
   return (
     <section className="info-saved-articles">
       <h2 className="info-saved-articles__title">Сохранённые статьи</h2>
