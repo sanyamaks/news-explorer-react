@@ -21,4 +21,4 @@ const NavItem = (props) => {
   );
 };
 
-export default NavItem;
+export default React.memo(NavItem);

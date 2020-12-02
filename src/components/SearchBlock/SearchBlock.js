@@ -4,6 +4,7 @@ import SearchDescription from './SearchDescription/SearchDescription';
 import SearchForm from './SearchForm/SearchForm';
 
 const SearchBlock = () => {
+  console.log("SearchBlock");
   return (
     <section className="search">
       <SearchDescription />
@@ -12,4 +13,4 @@ const SearchBlock = () => {
   );
 };
 
-export default SearchBlock;
+export default React.memo(SearchBlock);

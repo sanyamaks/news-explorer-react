@@ -9,4 +9,4 @@ const ButtonIcon = (props) => {
   return <Icon className="button__icon-logout" fill="currentColor" />;
 };
 
-export default ButtonIcon;
+export default React.memo(ButtonIcon);

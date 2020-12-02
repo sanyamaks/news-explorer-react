@@ -15,4 +15,4 @@ const TextLogo = (props) => {
   );
 };
 
-export default TextLogo;
+export default React.memo(TextLogo);

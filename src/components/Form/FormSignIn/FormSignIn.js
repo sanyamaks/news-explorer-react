@@ -7,6 +7,7 @@ const FormSignIn = (props) => {
   const { errorText, handleClickToggle } = props;
 
   const renderErrorText = () => {
+    console.log('FormSignIn');
     if (!errorText) {
       return null;
     }
@@ -41,12 +42,17 @@ const FormSignIn = (props) => {
       <Button
         className="form__button"
         variant="disabled"
+        type="submit"
         text="Войти"
         disabled={true}
       />
       <p className="form__text">
         или{' '}
-        <button className="form__choice" type="button" onClick={handleClickToggle}>
+        <button
+          className="form__choice"
+          type="button"
+          onClick={handleClickToggle}
+        >
           Зарегистироваться
         </button>
       </p>

@@ -1,21 +1,22 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import ReactDOM from 'react-dom';
 import './Popup.css';
 import { ReactComponent as Icon } from '../../assets/icons/icon-close-popup.svg';
+import IconClose from './IconClose/IconClose';
 
 const Popup = (props) => {
   console.log('Popup');
 
-  const { isActive, closePopup, children } = props;
-  if (!isActive) {
-    return null;
-  }
+  const { closePopup, children } = props;
 
-  const popupClick = (event) => {
-    if (event.target === document.querySelector('.popup')) {
-      closePopup();
-    }
-  };
+  const popupClick = useCallback(
+    (event) => {
+      if (event.target === document.querySelector('.popup')) {
+        closePopup();
+      }
+    },
+    [closePopup]
+  );
 
   return ReactDOM.createPortal(
     <div className="popup" onClick={popupClick}>
@@ -25,7 +26,7 @@ const Popup = (props) => {
           type="button"
           onClick={closePopup}
         >
-          <Icon className="popup__icon-close" />
+          <IconClose Icon={Icon} />
         </button>
         {children}
       </div>

@@ -3,6 +3,7 @@ import './NotFound.css';
 import { ReactComponent as Icon } from '../../assets/icons/icon-not-found.svg';
 
 const NotFound = (props) => {
+  console.log("NotFound");
   const { isActive } = props;
 
   if (!isActive) {
@@ -19,4 +20,4 @@ const NotFound = (props) => {
   );
 };
 
-export default NotFound;
+export default React.memo(NotFound);

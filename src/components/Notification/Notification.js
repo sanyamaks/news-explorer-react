@@ -2,6 +2,7 @@ import React from 'react';
 import './Notification.css';
 
 const Notification = (props) => {
+  console.log('Notification');
   const { text, buttonText, handleClickToggle } = props;
 
   const renderButton = () => {
@@ -9,7 +10,11 @@ const Notification = (props) => {
       return null;
     }
     return (
-      <button className="notification__choice" type="button" onClick={handleClickToggle}>
+      <button
+        className="notification__choice"
+        type="button"
+        onClick={handleClickToggle}
+      >
         {buttonText}
       </button>
     );

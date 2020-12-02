@@ -21,4 +21,4 @@ const InfoSavedArticles = () => {
   );
 };
 
-export default InfoSavedArticles;
+export default React.memo(InfoSavedArticles);

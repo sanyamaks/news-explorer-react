@@ -4,6 +4,7 @@ import InputWrapper from '../../InputWrapper/InputWrapper';
 import Button from './../../Button/Button';
 
 const FormSignUp = (props) => {
+  console.log('FormSignUp');
   const { errorText, handleClickSignUp, handleClickToggle } = props;
 
   const renderErrorText = () => {
@@ -55,13 +56,18 @@ const FormSignUp = (props) => {
       <Button
         className="form__button"
         variant="disabled"
+        type="submit"
         text="Зарегистироваться"
         onClick={handleClickSignUp}
         // disabled={true}
       />
       <p className="form__text">
         или{' '}
-        <button className="form__choice" type="button" onClick={handleClickToggle}>
+        <button
+          className="form__choice"
+          type="button"
+          onClick={handleClickToggle}
+        >
           Войти
         </button>
       </p>

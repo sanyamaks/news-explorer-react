@@ -29,4 +29,4 @@ const NavbarButton = (props) => {
   );
 };
 
-export default NavbarButton;
+export default React.memo(NavbarButton);

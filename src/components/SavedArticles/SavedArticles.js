@@ -3,6 +3,7 @@ import './SavedArticles.css';
 import Articles from '../Articles/Articles';
 
 const SavedArticles = (props) => {
+  console.log("SavedArticles");
   const { isActive, articles } = props;
   if (!isActive) {
     return null;
@@ -18,4 +19,4 @@ const SavedArticles = (props) => {
   );
 };
 
-export default SavedArticles;
+export default React.memo(SavedArticles);

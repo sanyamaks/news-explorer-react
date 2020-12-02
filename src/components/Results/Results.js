@@ -4,6 +4,7 @@ import Articles from '../Articles/Articles';
 import Button from '../Button/Button';
 
 const Results = (props) => {
+  console.log("Results");
   const { isActive, articles } = props;
 
   if (!isActive) {
@@ -27,4 +28,4 @@ const Results = (props) => {
   );
 };
 
-export default Results;
+export default React.memo(Results);
